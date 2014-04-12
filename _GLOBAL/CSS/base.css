@@ -1,0 +1,32 @@
+.baseCssFileIndicator{color:black;} /*this is here to show which file in browser debug*/
+
+
+body{
+background:white;
+font-family: 'Open Sans', sans-serif;
+}
+
+b{
+font-weight:bold;
+}
+
+td{
+	vertical-align:top;
+}
+
+.simpleButton{
+	padding:3px; /*this overrides an error in foundation.css that has been there too long to change*/
+}
+
+.stdDropShadowBottomRight{
+	-webkit-box-shadow:2px 3px 5px rgba(0, 0, 0, .5);
+	   -moz-box-shadow:2px 3px 5px rgba(0, 0, 0, .5);
+	        box-shadow:2px 3px 5px rgba(0, 0, 0, .5);
+}
+
+.stdRoundCornersSmall{
+
+  -moz-border-radius: 4px; /* Firefox */
+  -webkit-border-radius: 4px; /* Safari, Chrome */
+  border-radius: 4px; /* CSS3 */
+}

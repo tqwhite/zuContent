@@ -1,0 +1,27 @@
+.expandoButtonFileIndicator{color:black;} /*this is here to show which file in browser debug*/
+
+.expandButton{
+	height:16px;
+	width:62px;
+	background:url(../images/ICON_More_01.png) no-repeat;
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	cursor:pointer;
+}
+.expandButton:hover{
+	background:url(../images/ICON_More_Lit_01.png) no-repeat;
+}
+
+.contractButton{
+	height:16px;
+	width:62px;
+	background:url(../images/ICON_Less_01.png) no-repeat;
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	cursor:pointer;
+}
+.contractButton:hover{
+	background:url(../images/ICON_Less_Lit_01.png) no-repeat;
+}

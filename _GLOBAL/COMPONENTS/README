@@ -1,0 +1,11 @@
+Layouts are defined by the system. They include code and are very fussy, technical things.
+
+This is where many of the colors and styles of the site are defined. Since they have code,
+they need to be created by a programmer. If you are not one of those, you should not
+mess around here.
+
+If you are, start with a template from the layouts directory in the Zend code system. They
+are associated with page types but not on a one-to-one basis. Most use 'layout.phtml'. The
+rest are for unusual circumstances.
+
+Good luck.

@@ -1,0 +1,20 @@
+<?php
+
+if (isset($this->requestParms['uri'])){
+
+	$parms=$this->requestParms; //also might include 'anchor'
+	echo $this->action('create','bookmark', '', $parms);
+	
+}
+elseif (count($_GET)==1){
+
+		foreach ($_GET as $label=>$data){
+			$shortId=$label;
+		}
+		
+	$this->action('redirect','bookmark', '', array('shortId'=>$shortId));
+	exit;
+}
+else{
+	echo $this->layout()->content;
+}

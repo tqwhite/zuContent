@@ -1,0 +1,12 @@
+.closeWidgetReady{
+	background:url(/media/widgets/closeCircleReady.png) no-repeat scroll center center transparent;
+	width:30px;height:30px;
+}
+.closeWidgetHover{
+	background:url(/media/widgets/closeCircleHover.png) no-repeat scroll center center transparent;
+	width:30px;height:30px;
+}
+.closeWidgetUnavailable{
+	background:url(/media/widgets/closeCircleUnavailable.png) no-repeat scroll center center transparent;
+	width:30px;height:30px;
+}

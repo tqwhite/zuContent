@@ -1,0 +1,70 @@
+.featureStylesFileIndicator{color:black;} /*this is here to show which file in browser debug*/
+
+.learnMore{
+	font-weight:bold;
+	font-size:12pt;
+	margin:0px 0px 5px 0px;
+}
+
+.learnMore a{
+	cursor:pointer;
+	background:url(../images/ICON_Link_Device_Blue_01.png) no-repeat scroll center 0px transparent;
+}
+.learnMore a:hover{
+	background:url(../images/ICON_Link_Device_Silver_01.png) no-repeat scroll center 0px transparent;
+}
+
+.learnMoreWhite{
+	font-weight:bold;
+	font-size:12pt;
+	margin:0px 0px 5px 0px;
+}
+
+.learnMoreWhite a{
+	cursor:pointer;
+	background:url(../images/ICON_Link_Device_White_01.png) no-repeat scroll center 0px transparent;
+}
+.learnMoreWhite a:hover{
+	background:url(../images/ICON_Link_Device_Silver_01.png) no-repeat scroll center 0px transparent;
+}
+
+.imageAnchor{
+	cursor:pointer;
+	background:url(../images/ICON_Link_Device_Blue_01.png) no-repeat scroll center 5px transparent;
+}
+.imageAnchor:hover{
+	background:url(../images/ICON_Link_Device_Silver_01.png) no-repeat scroll center 5px transparent;
+}
+
+.imageAnchorSmall{
+	cursor:pointer;
+	background:url(../images/ICON_Link_Device_Blue_small.png) no-repeat scroll center 5px transparent;
+}
+.imageAnchorSmall:hover{
+	background:url(../images/ICON_Link_Device_Silver_small.png) no-repeat scroll center 5px transparent;
+}
+
+
+.learnMoreTextBlue{
+	font-weight:bold;
+	color:#297FFF;
+}
+
+.learnMoreTextBlue a{
+	cursor:pointer;
+	font-size:14pt;
+	background:url(../images/ICON_Link_Device_Blue_01.png) no-repeat scroll center 5px transparent;
+}
+.learnMoreTextBlue a:hover{
+	background:url(../images/ICON_Link_Device_Silver_01.png) no-repeat scroll center 5px transparent;
+}
+
+
+.downloadPdf{
+	background:url(../images/downloadPdfReady.png) no-repeat scroll center center transparent;
+	width:90px;
+	height:45px;
+}
+.downloadPdf:hover{
+	background:url(../images/downloadPdfHover.png) no-repeat scroll center center transparent;
+}

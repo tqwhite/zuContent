@@ -1,5 +1,5 @@
 .globalTabbedMulti2_fileIndicator{ color:black; }
-
+/*
 .mainContentContainer{
 	width:900px;
 	margin: 0px auto;
@@ -46,7 +46,7 @@ margin-top:20px;overflow:hidden;}
 
 
 
-/*PANEL APPEARANCE =========================================*/
+
 
 .anythingSlider-default.activeSlider .anythingControls a{
 	color:#ccc !important;
@@ -56,14 +56,14 @@ margin-top:20px;overflow:hidden;}
 	border-bottom:none !important;
 }
 
-/* Navigation current & hovered button, active state */
+
 
 a.cur {
-	/* background image removed */
+
 	color:#666 !important;
 }
 
-/*TAB PANEL CONTROLS =========================================*/
+
 
 .masterPanelList{
 	border:4pt solid #e6e3e3;
@@ -74,7 +74,7 @@ a.cur {
 	height:448px;
 }
 
-#contentList{ /* this spec is necessary so that the scroll arrows appear*/
+
 
 	width:890px;
 	height:448px;
@@ -104,7 +104,7 @@ a.cur {
 padding:10px 0px;
 }
 .sliderTopControls a {
-	/* top shadow */
+
 	color: #2a7fff;
 	font-size:8pt;
 	vertical-align:top;
@@ -127,3 +127,4 @@ width: 100px;
 
 background: url(/js/widgets/stylesheets/anythingslider/imagesCustom/defaultXLighter.png) no-repeat;
 }
+*/

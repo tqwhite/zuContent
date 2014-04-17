@@ -1,0 +1,206 @@
+<?php
+
+$serverComm=$this->serverComm;
+
+$headTitle=$this->headTitle();
+
+$viewContent=$this->layout()->content;
+
+$javascript=$this->headScript(); //note: call for steal.js is literal so it always executes first, others can count on it
+
+$route=Zend_Controller_Front::getInstance()->getRouter()->getCurrentRoute()->getDefaults();
+if (isset($route['title'])){
+	$this->headTitle($route['title']);
+}
+else{
+	$request = Zend_Controller_Front::getInstance()->getRequest();
+	$this->headTitle($request->getActionName().'/')
+		 ->headTitle($request->getControllerName());
+}
+
+
+
+//DROPDOWN MENU =========================================================================
+
+
+//$this->setDefaultNavStyles($this);
+
+	$controlsString='';
+if(isset($this->contentArray['headNav.ini']) && isset($this->contentArray['headNav.ini']['menu'])){
+	$controlsString=$this->unorderedListForSelect(
+		$this->contentArray['headNav.ini']['menu'],
+		array('mainClass'=>'dropdown')
+	);
+
+$controlsString="
+<div class='navBlock'>
+	<div class='navMenus'>$controlsString</div>
+</div>";
+}
+else{
+	$controlsString="";
+}
+
+//ELEMENTS, IMAGES, ETC =========================================================================
+
+
+	$elementList=(isset($this->contentArray['images']))?$this->contentArray['images']:array();
+
+	$headBanner=$this->contentArray['headBanner.html'];
+
+// erroneous 
+// 	foreach ($elementList as $label=>$data){
+// 		$headBanner=str_replace("images/$label", $data, $headBanner);
+// 	}
+	
+	$headBanner="<a href='http://<!baseDomain!>'>$headBanner</a>";
+//	$headBanner=$this->translateUrls($headBanner);
+
+if (isset($this->contentArray['siteDirectoryUrlList.ini'])){
+$siteDirectory=$this->render('default/siteDirectory.phtml');
+}
+else{
+	$siteDirectory='';
+}
+
+$jqueryReadyScript=$this->buildJqueryReadyCall($this->contentArray);
+
+$contactFooter=$this->contentArray['contactFooter.html'];
+
+$footer="
+<div class='footerContainer'>
+	<div class='footerSiteDrectoryBlock'>
+		$siteDirectory
+	</div>
+	<div class='footerContactBlock'>
+		$contactFooter
+	</div>
+</div>
+";
+
+$codeNavHtml=$this->showCodeNav($this->codeNav);
+
+if (APPLICATION_ENV=='production'){
+	$widgetScriptCall="<script type='text/javascript' src='/js/steal/steal.production.js?widgets'></script>";
+}
+else{
+	$widgetScriptCall="<script type='text/javascript' src='/js/steal/steal.js?widgets'></script>";
+}
+
+if (APPLICATION_ENV=='production' && isset($this->contentArray['analytics.js']) && $this->contentArray['analytics.js']){
+	$analyticsString="<script type='text/javascript'>
+		{$this->contentArray['analytics.js']}
+		</script>";
+}
+else{
+	$analyticsString='';
+}
+
+//GLOBAL OVERRIDES (from content dir) =========================================================================
+
+	$this->applyStyles($this, $this->contentArray);
+	
+	if (isset($this->contentArray['superGlobalItems']['COMPONENTS']['headSection.html'])){
+		$superGlobalHeadStuff=$this->contentArray['superGlobalItems']['COMPONENTS']['headSection.html'];
+	}
+	else{
+		$superGlobalHeadStuff='';
+	}
+	if (isset($this->contentArray['globalItems']['COMPONENTS']['headSection.html'])){
+		$siteHeadStuff=$this->contentArray['globalItems']['COMPONENTS']['headSection.html'];
+	}
+	else{
+		$siteHeadStuff='';
+	}
+
+
+
+//PARAMETERS (for JS widgets) =========================================================================
+	
+	$routeName=Zend_Controller_Front::getInstance()->getRouter()->getCurrentRouteName();
+
+	$serverData='';
+	$parameters=array('processContentSourceRouteName'=>$routeName);
+
+	
+	if (isset($this->contentArray['globalItems']['_PARAMETERS'])){
+		$parameters=array_merge($parameters, $this->contentArray['globalItems']['_PARAMETERS']);
+	}
+
+	if (isset($this->contentArray['_PARAMETERS'])){
+		$parameters=array_merge($parameters, $this->contentArray['_PARAMETERS']);
+	}
+	
+	if (count($parameters)>0){
+		$parameters=\Q\Utils::htmlEntities($parameters);
+		$parameters=json_encode($parameters);
+		$serverData.="<div class='serverData' id='parameters' style='display:none;'>$parameters</div>";
+	}
+
+
+//MAIN CONTENT SECTION =========================================================================
+
+
+$headStyle=$this->headStyle();
+
+if ($serverData==''){$serverData="<!-- no serverData sent for this page type -->";}
+
+$outputString="
+	<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN'
+	   'http://www.w3.org/TR/html4/strict.dtd'>
+	<html>
+
+	<head>
+	<META HTTP-EQUIV='Content-Type' CONTENT='text/html; charset=UTF-8'>
+	<link rel='stylesheet' type='text/css' href='/css/baseCss/foundation.css'>
+
+	$headTitle
+
+	<style type='text/css'><!--
+		a {text-decoration:none;}
+	--></style>
+
+
+	$headStyle
+	
+	$superGlobalHeadStuff
+	
+	$siteHeadStuff
+	
+	</head>
+
+	<body >
+	<table width=100%><tr><td align=center>
+	$serverComm
+	$serverData
+	
+	$controlsString
+	$viewContent
+
+	$footer
+	
+	$headBanner
+
+	</body>
+
+	$javascript
+
+	$codeNavHtml
+
+	<script type='text/javascript'>
+	/* <![CDATA[ */
+		document.getElementsByTagName('body')[0].style.display = 'none';
+	/* ]]> */
+	</script>
+
+
+	$widgetScriptCall
+	$jqueryReadyScript
+	$analyticsString
+	</html>
+";
+
+$outputString=$this->translateUrls($outputString);
+
+$outputString=$this->mapServableToHash($this->contentArray, $outputString);
+echo $outputString;

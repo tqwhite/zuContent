@@ -1,0 +1,80 @@
+.scrollPanelCssFileIndicator{color:black;} /*this is here to show which file in browser debug*/
+
+
+.panelTab{
+
+}
+
+.tabControlGuts{
+
+}
+
+.contentListActivator{
+
+}
+
+
+
+.mainContentContainer{
+}
+
+#panelContainer{
+
+}
+
+#tabList{
+
+}
+
+.sliderTopControls{
+
+}
+
+.masterPanelList{
+
+}
+
+#contentList{
+
+}
+
+.switchablePanel{
+border:1pt solid gray;
+width100%;
+height:100%;
+}
+
+#tabDisplayContainer{
+
+}
+
+.scrollItem{
+position:relative;
+}
+
+
+.menuActivateButton{
+	height:40px;width:100px;position:absolute;top:0px;right:0px;
+	border:1pt solid #ddd;
+}
+
+#navHeader{
+height:100px;width:900px;font-size:24pt;position:fixed;top:0px;left:0px;display:none
+}
+
+#frontPageNav{
+height:50px;width:900px;font-size:24pt;position:absolute;bottom:0px;left:0px;
+}
+
+.navButton{
+float:left;
+font-size:80%;
+margin:10px 10px;
+border:2pt solid red;
+}
+
+.navButton a{ color:red;}
+
+.navButton:hover{
+background:#eee;
+}

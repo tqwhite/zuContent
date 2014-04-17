@@ -13,23 +13,7 @@
 }
 
 
-.contactPanel{
-	height:300px;
-	width:300px;
-	
-	padding:20px;
-	font-weight:bold;
-	
-	background:white;
-	border:1pt solid gray;
-	
-  -moz-border-radius: 4px; /* Firefox */
-  -webkit-border-radius: 4px; /* Safari, Chrome */
-  border-radius: 4px; /* CSS3 */
-	-webkit-box-shadow:2px 3px 5px rgba(0, 0, 0, .5);
-	   -moz-box-shadow:2px 3px 5px rgba(0, 0, 0, .5);
-	        box-shadow:2px 3px 5px rgba(0, 0, 0, .5);
-}
+
 
 .contactPanel .header{
 height:30px;text-align:center;border-bottom:1pt solid gray;padding-bottom:10px;margin-bottom:10px;

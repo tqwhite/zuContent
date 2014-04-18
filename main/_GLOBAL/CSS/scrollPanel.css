@@ -65,12 +65,13 @@ height:100px;width:900px;font-size:24pt;position:fixed;top:0px;left:0px;display:
 #frontPageNav{
 height:50px;width:900px;font-size:24pt;position:absolute;bottom:0px;left:0px;
 }
-
 .navButton{
 float:left;
 font-size:80%;
 margin:10px 10px;
 border:2pt solid red;
+
+font-family: "lazySunday", sans-serif;
 }
 
 .navButton a{ color:red;}

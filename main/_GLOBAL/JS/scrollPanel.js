@@ -74,20 +74,23 @@ event.preventDefault();
 	$('.tabList').hide();
 	var currPanelId=$(this).parent().parent().parent().attr('id');
 	var targetSelector=this.href.match(/.*(#.*)$/)[1],
-		target=$(targetSelector);
+		target=$(targetSelector);			
+		var titleString=this.text
+		origTitle=document.title;
 		
 		if (currPanelId!=targetSelector){
 		
-		var titleString=this.text
-			origTitle=document.title;
-			
-		if(titleString){document.title=origTitle+': '+titleString;}
-		location.hash=targetSelector;
+
 		
 		$.scrollTo(target, 2000, {
-			onAfter: function() {
+			onAfter: function() {		
+				if(titleString){document.title=origTitle+': '+titleString;}
+				location.hash=targetSelector;
 			}
 			
 			});
+
+			
+
 		}
 });

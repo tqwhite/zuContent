@@ -56,26 +56,44 @@ position:relative;
 .menuActivateButton{
 	height:40px;width:100px;position:absolute;top:0px;right:0px;
 	border:1pt solid #ddd;
+	cursor:pointer;
 }
 
-#navHeader{
-height:100px;width:900px;font-size:24pt;position:fixed;top:0px;left:0px;display:none
+
+.navSubsequentPanels{
+background:rgba(255,208,63,.7);
 }
 
-#frontPageNav{
-height:50px;width:900px;font-size:24pt;position:absolute;bottom:0px;left:0px;
+.navFrontPanel{
+bottom:30px;left:30px;
+background:white;
 }
-.navButton{
-float:left;
-font-size:80%;
-margin:10px 10px;
-border:2pt solid red;
+
+.tabList{
 
 font-family: "lazySunday", sans-serif;
+height:72px;width:90%;font-size:24pt;
+
+position:absolute;
+display:block;
+color:red;
+z-index:1000;
+
 }
 
-.navButton a{ color:red;}
+.panelTab{
 
-.navButton:hover{
+display:block;
+float:left;
+font-size:130%;
+margin:10px 10px;
+border:2pt solid black;
+background:white;
+}
+
+.panelTab a{ color:black;
+}
+
+.panelTab:hover{
 background:#eee;
 }

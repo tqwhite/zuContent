@@ -54,12 +54,20 @@ position:relative;
 
 
 .menuActivateButton{
-	height:40px;width:100px;position:absolute;top:0px;right:0px;
-	border:1pt solid #ddd;
-	cursor:pointer;
-	font-family: "lazySunday", sans-serif;
+border: 1pt solid #DDDDDD;
+cursor: pointer;
+font-size: 160%;
+height: 40px;
+position: absolute;
+right: 0;
+top: 0px;
+width: 100px;
+padding:10px 0px 0px 0px;
 }
 
+.menuActivateButton:hover{
+background:#eee;
+}
 
 .navSubsequentPanels{
 background:rgba(255,208,63,.7);
@@ -72,7 +80,6 @@ background:white;
 
 .tabList{
 
-font-family: "lazySunday", sans-serif;
 height:72px;width:90%;font-size:24pt;
 
 position:absolute;

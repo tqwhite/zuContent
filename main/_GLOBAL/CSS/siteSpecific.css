@@ -1,4 +1,14 @@
 .siteSpecificCssFileIndicator{color:black;} /*this is here to show which file in browser debug*/
 
 
+body{
 
+	font-family: "lazySunday", sans-serif;
+	}
+	
+.fpHead{
+font-size:40pt;
+text-align:left;
+letter-spacing:4px;
+line-height:1.0;
+}

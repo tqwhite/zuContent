@@ -1,0 +1,22 @@
+.faqText {
+  height: 70%;
+  left: 34px;
+  overflow: scroll;
+  position: absolute;
+  text-align: left;
+  top: 148px;
+  width: 65%;
+  border:1pt solid gray;
+}
+
+.faqText .question{
+font-weight:600;
+margin-top:15px;
+  font-size: 16pt;
+}
+
+.faqText .answer{
+font-weight:normal;
+  font-size: 13pt;
+margin-top:5px;
+}

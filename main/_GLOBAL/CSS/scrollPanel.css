@@ -57,6 +57,7 @@ position:relative;
 	height:40px;width:100px;position:absolute;top:0px;right:0px;
 	border:1pt solid #ddd;
 	cursor:pointer;
+	font-family: "lazySunday", sans-serif;
 }
 
 
@@ -65,7 +66,7 @@ background:rgba(255,208,63,.7);
 }
 
 .navFrontPanel{
-bottom:30px;left:30px;
+bottom:10px;left:10px;
 background:white;
 }
 
@@ -87,6 +88,7 @@ display:block;
 float:left;
 font-size:130%;
 margin:10px 10px;
+padding:0px 10px;
 border:2pt solid black;
 background:white;
 }
@@ -96,4 +98,12 @@ background:white;
 
 .panelTab:hover{
 background:#eee;
+}
+
+.navActive{
+opacity:1.0;
+}
+
+.navInactive{
+opacity:.5;
 }

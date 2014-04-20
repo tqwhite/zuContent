@@ -55,6 +55,7 @@ event.preventDefault();
 
 		
 		$.scrollTo(target, 2000, {
+		'axis':'y',
 			onAfter: function() {		
 				if(titleString){document.title=origTitle+': '+titleString;}
 				location.hash=targetSelector;
